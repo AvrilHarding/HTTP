@@ -1,9 +1,14 @@
 require 'sinatra'
 
-get '/cat' do
+get '/random-cat' do
   @name = ["Chewie", "Han", "Kylo"].sample
   erb(:index)
  end
+
+get '/named-cat' do
+  @name = params[:name]
+  erb :index
+end
 
 get '/' do
   "Hello World"
